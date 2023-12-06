@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./output/tailwind.css">
+    <link rel="stylesheet" href="style.css">
+    <title>My Wallet Dashboard</title>
+</head>
+<body class="bdy h-screen">
+    <nav>
+        <div class="container mx-auto mt-5 px-4 py-2 flex justify-between items-center bg-white">
+            <div class=""><a class="text-2xl font-medium no-underline" href="#">SMART-WALLET Dashboard</a></div>
+            <a href="./index.html">
+                <h4 class="font-bold">Log-Out<i class="fa-solid fa-arrow-left"
+                        style="margin-left: 8px;font-size: 14px;"></i></h4>
+            </a>
+
+        </div>
+    </nav>
+    <div id="wallet_bdy" class="w-full h-fit flex flex-col justify-evenly items-center gap-10">
+
+        <div class="flex flex-row justify-center items-center w-full bg-white">
+            <h3 class="text-2xl font-bold"><i class="fa-solid fa-wallet m-4"></i>Wallet Manager</h3>
+
+        </div>
+        <div class="flex flex-row justify-center items-center w-full gap-20">
+            <div class="bg-green-500 p-10 w-2/6 flex flex-col justify-center items-center">
+                <h2 class="text-2xl font-bold text-white">Diposit</h2>
+                <h3 class="text-lg font-bold text-white"><span id="pre_dip">00</span> BDT</h3>
+            </div>
+            <div class="bg-gray-700 p-10 w-2/6 flex flex-col justify-center items-center">
+                <h3 class="text-2xl font-bold text-white">Withdraw</h3>
+                <h3 class="text-xl font-bold text-white"><span id="pre_wd">00</span> BDT</h3>
+            </div>
+            <div class="bg-blue-500 p-10 w-2/6 flex flex-col justify-center items-center">
+                <h3 class="text-2xl font-bold text-white">Current Balance</h3>
+                <h3 class="text-xl font-bold text-white"><span id="cur_b">1340</span> BDT</h3>
+            </div>
+        </div>
+        <div class="flex flex-row justify-evenly items-center w-full gap-20">
+            <div class="flex flex-col w-2/4 justify-between items-center bg-blue-700 shadow-lg p-10 gap-5">
+                <label for="text" class="text-center font-bold text-2xl text-white">Enter Diposit Ammount</label>
+                <input onblur="GetValue()" type="text" name="text" id="d_add" placeholder="Enter Diposit Amount" class="w-2/3 px-4 py-2 text-sm rounded-sm focus:outline-none focus:ring focus:ring-violet-300">
+                <button onclick="Click_Dip()" id="diposit_btn" class="bg-white p-2 px-4 rounded-sm text-blue-600 font-bold">Diposit</button>
+            </div>
+            <div class="flex flex-col w-2/4 justify-between items-center bg-green-600 shadow-lg p-10 gap-5">
+                <label for="text" class="text-center font-bold text-2xl text-white">Enter Withdraw Amount</label>
+                <input onblur="GetValue_W()" type="text" name="text" id="wd_add" placeholder="Enter Withdraw Amount" class="w-2/3 px-4 py-2 text-sm rounded-sm focus:outline-none focus:ring focus:ring-violet-300">
+                <button onclick="Click_Wth()" id="withdraw_btn" class="bg-white p-2 px-4 rounded-sm text-green-600 font-bold">Withdraw</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="wallet.js"></script>
+
+
+</body>
+
+</html>
